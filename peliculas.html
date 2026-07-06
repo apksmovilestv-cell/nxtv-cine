@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas - NXTV</title>
+    <style>
+        body { margin: 0; background: #0a0a0a; color: #fff; font-family: 'Segoe UI', sans-serif; padding-bottom: 80px; }
+        .header { padding: 15px; background: #000; text-align: center; border-bottom: 2px solid #e50914; font-weight: bold; color: #e50914; }
+        
+        /* Grid de películas */
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 15px; }
+        .card { background: #111; border-radius: 8px; overflow: hidden; border: 1px solid #333; }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card p { margin: 10px; font-size: 14px; text-align: center; }
+
+        /* Menú inferior igual al anterior */
+        .nav-bottom { position: fixed; bottom: 0; width: 100%; display: flex; justify-content: space-around; background: #111; padding: 12px 0; border-top: 2px solid #e50914; }
+        .nav-bottom a { color: #fff; text-decoration: none; font-size: 14px; font-weight: bold; text-align: center; display: flex; flex-direction: column; }
+    </style>
+</head>
+<body>
+
+    <header class="header">🎬 PELÍCULAS</header>
+
+    <div class="grid">
+        <!-- AQUÍ AGREGARÁS TUS PELÍCULAS -->
+        <div class="card">
+            <img src="URL_DE_IMAGEN_AQUI" alt="Peli">
+            <p>Nombre de Película</p>
+        </div>
+    </div>
+
+    <nav class="nav-bottom">
+        <a href="index.html"><span>🏠</span>Inicio</a>
+        <a href="peliculas.html"><span>🎬</span>Películas</a>
+        <a href="series.html"><span>📺</span>Series</a>
+        <a href="anime.html"><span>🏮</span>Anime</a>
+    </nav>
+</body>
+</html>
