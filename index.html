@@ -3,45 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NXTV - Streaming Pro</title>
+    <title>NXTV - Streaming</title>
     <style>
-        /* Estilos base Dark */
-        body { margin: 0; background: #0a0a0a; color: #fff; font-family: 'Segoe UI', sans-serif; }
-        .header { display: flex; justify-content: space-between; padding: 20px; background: #000; align-items: center; border-bottom: 2px solid #e50914; }
-        .logo { font-size: 24px; font-weight: bold; color: #e50914; }
+        body { margin: 0; background: #0a0a0a; color: #fff; font-family: 'Segoe UI', sans-serif; padding-bottom: 70px; }
         
-        /* Banner Automático */
+        /* Header */
+        .header { padding: 20px; background: #000; text-align: center; border-bottom: 2px solid #e50914; font-size: 24px; font-weight: bold; color: #e50914; }
+        
+        /* Banner */
         .banner { width: 100%; height: 200px; overflow: hidden; position: relative; }
         .banner img { width: 100%; height: 100%; object-fit: cover; display: none; }
         .banner img.active { display: block; }
 
-        /* Navegación de secciones */
-        .nav-links { display: flex; justify-content: space-around; background: #111; padding: 15px 0; border-bottom: 1px solid #333; }
-        .nav-links a { color: #ccc; text-decoration: none; font-size: 14px; font-weight: bold; }
-        .nav-links a:hover { color: #e50914; }
+        /* Menú Inferior */
+        .nav-bottom { position: fixed; bottom: 0; width: 100%; display: flex; justify-content: space-around; background: #111; padding: 12px 0; border-top: 2px solid #e50914; }
+        .nav-bottom a { color: #fff; text-decoration: none; font-size: 16px; font-weight: bold; text-align: center; display: flex; flex-direction: column; }
+        .nav-bottom a span { font-size: 20px; margin-bottom: 3px; }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">NXTV</div>
-        <div style="font-size: 25px; color: #e50914;">☰</div>
-    </header>
+    <header class="header">NXTV</header>
 
-    <!-- Navegación -->
-    <nav class="nav-links">
-        <a href="index.html">INICIO</a>
-        <a href="peliculas.html">PELÍCULAS</a>
-        <a href="series.html">SERIES</a>
-        <a href="anime.html">ANIME</a>
-    </nav>
-
-    <!-- Banner Automático -->
     <div class="banner" id="banner">
         <img src="https://via.placeholder.com/800x300/222/fff?text=ESTRENO+1" class="active">
         <img src="https://via.placeholder.com/800x300/333/fff?text=ESTRENO+2">
         <img src="https://via.placeholder.com/800x300/444/fff?text=ESTRENO+3">
     </div>
+
+    <!-- Menú Abajo con Emojis -->
+    <nav class="nav-bottom">
+        <a href="index.html"><span>🏠</span>Inicio</a>
+        <a href="peliculas.html"><span>🎬</span>Películas</a>
+        <a href="series.html"><span>📺</span>Series</a>
+        <a href="anime.html"><span>🏮</span>Anime</a>
+    </nav>
 
     <script>
         let index = 0;
