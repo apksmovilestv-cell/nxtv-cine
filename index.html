@@ -3,28 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NXTV - Tu cine en un solo lugar</title>
+    <title>NXTV - Streaming</title>
     <style>
-        body { margin: 0; background: #0a0a0a; color: #fff; font-family: sans-serif; text-align: center; }
-        .hero { padding: 50px 20px; }
-        .logo { width: 150px; margin-bottom: 20px; }
-        h1 { color: #ff0000; margin: 0; }
-        p { color: #888; margin-top: 5px; }
-        .btn-container { margin-top: 40px; display: flex; flex-direction: column; gap: 15px; padding: 0 20px; }
-        .btn { padding: 15px; background: #ff0000; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        body { margin: 0; background-color: #050505; color: #fff; font-family: sans-serif; }
+        /* Menú Hamburguesa */
+        .header { display: flex; justify-content: space-between; padding: 20px; align-items: center; }
+        .menu-btn { font-size: 30px; cursor: pointer; color: #e50914; }
+        /* Banner (La cosa automática) */
+        .banner { width: 100%; height: 250px; background: #222; display: flex; align-items: center; justify-content: center; border-bottom: 3px solid #e50914; }
+        /* Lista de Secciones */
+        .nav-menu { display: none; background: #111; padding: 20px; position: absolute; width: 100%; top: 70px; }
+        .nav-menu a { display: block; color: white; padding: 15px; text-decoration: none; border-bottom: 1px solid #333; }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>NXTV</h1>
-        <p>Tu cine en un solo lugar</p>
+    <div class="header">
+        <div style="font-weight:bold; font-size:24px;">NXTV</div>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
     </div>
 
-    <div class="btn-container">
-        <a href="peliculas.html" class="btn">VER PELÍCULAS</a>
-        <a href="canales.html" class="btn">VER CANALES</a>
+    <div id="nav" class="nav-menu">
+        <a href="peliculas.html">Películas</a>
+        <a href="series.html">Series</a>
+        <a href="anime.html">Anime</a>
     </div>
 
+    <div class="banner">
+        <p>BANNER AUTOMÁTICO (Aquí irán tus destacados)</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("nav");
+            if (x.style.display === "block") { x.style.display = "none"; } 
+            else { x.style.display = "block"; }
+        }
+    </script>
 </body>
 </html>
