@@ -6,14 +6,15 @@
     <title>NXTV - Streaming</title>
     <style>
         body { margin: 0; background-color: #050505; color: #fff; font-family: sans-serif; }
-        /* Menú Hamburguesa */
-        .header { display: flex; justify-content: space-between; padding: 20px; align-items: center; }
+        .header { display: flex; justify-content: space-between; padding: 20px; align-items: center; background: #000; }
         .menu-btn { font-size: 30px; cursor: pointer; color: #e50914; }
-        /* Banner (La cosa automática) */
-        .banner { width: 100%; height: 250px; background: #222; display: flex; align-items: center; justify-content: center; border-bottom: 3px solid #e50914; }
-        /* Lista de Secciones */
-        .nav-menu { display: none; background: #111; padding: 20px; position: absolute; width: 100%; top: 70px; }
+        .nav-menu { display: none; background: #111; padding: 20px; position: absolute; width: 100%; top: 70px; z-index: 10; }
         .nav-menu a { display: block; color: white; padding: 15px; text-decoration: none; border-bottom: 1px solid #333; }
+        
+        /* Estilo Banner */
+        .banner { width: 100%; height: 250px; background: #333; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; border-bottom: 3px solid #e50914; }
+        .banner img { width: 100%; height: 100%; object-fit: cover; display: none; }
+        .banner img.active { display: block; }
     </style>
 </head>
 <body>
@@ -29,16 +30,27 @@
         <a href="anime.html">Anime</a>
     </div>
 
-    <div class="banner">
-        <p>BANNER AUTOMÁTICO (Aquí irán tus destacados)</p>
+    <div class="banner" id="banner">
+        <img src="https://via.placeholder.com/800x400/ff0000/ffffff?text=ESTRENO+1" class="active">
+        <img src="https://via.placeholder.com/800x400/000000/ffffff?text=ESTRENO+2">
+        <img src="https://via.placeholder.com/800x400/333333/ffffff?text=ESTRENO+3">
     </div>
 
     <script>
         function toggleMenu() {
             var x = document.getElementById("nav");
-            if (x.style.display === "block") { x.style.display = "none"; } 
-            else { x.style.display = "block"; }
+            x.style.display = (x.style.display === "block") ? "none" : "block";
         }
+
+        // Lógica del Banner Automático
+        let index = 0;
+        const images = document.querySelectorAll(".banner img");
+        function changeImage() {
+            images[index].classList.remove("active");
+            index = (index + 1) % images.length;
+            images[index].classList.add("active");
+        }
+        setInterval(changeImage, 3000); // Cambia cada 3 segundos
     </script>
 </body>
 </html>
